@@ -11,7 +11,7 @@
 				</div>
 			</noscript>
 			
-			<!-- Page Head -->
+			<!-- Page Head start -->
 			<h2>Welcome John</h2>
 			<p id="page-intro">What would you like to do?</p>
 			
