@@ -1,4 +1,14 @@
-<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+<div id="sidebar">
+
+<?php
+   $filename = basename($_SERVER['REQUEST_URI']);
+   //echo $filename;
+   //die();
+   $productmenu = array('products.php','categories.php','tags.php');
+
+?>
+
+     <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
 			
 			<h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
 		  
@@ -21,24 +31,24 @@
 				</li>
 				
 				<li> 
-					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+<a href="#" class="nav-top-item <?php if(in_array($filename,$productmenu)): ?>current<?php endif; ?>"> <!-- Add the class "current" to current menu item -->
 					Products
 					</a>
 					<ul>
-						<li><a href="#">Add Product</a></li>
-						<li><a class="current" href="#">Manage Product</a></li> <!-- Add class "current" to sub menu items also -->
-						<li><a href="#">Manage Categories</a></li>
-						<li><a href="#">Manage Tags</a></li>
+						
+<li><a <?php if($filename=='products.php'): ?>class="current"<?php endif;?> href="products.php">Manage Product</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="categories.php">Manage Categories</a></li>
+						<li><a href="tags.php">Manage Tags</a></li>
 					</ul>
 				</li>
 				
 				<li>
-					<a href="#" class="nav-top-item">
+					<a href="#" class="nav-top-item ">
 						Users
 					</a>
 					<ul>
-						<li><a href="#">Add Users</a></li>
-						<li><a href="#">Manage Users</a></li>
+						
+						<li><a href="users.php">Manage Users</a></li>
 					</ul>
                 </li>
                 
